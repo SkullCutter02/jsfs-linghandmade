@@ -25,6 +25,7 @@ const Information = ({ reverse, background }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          background: #d3d3d3;
         }
 
         .container {
@@ -39,6 +40,7 @@ const Information = ({ reverse, background }) => {
         .image {
           width: calc(100% + 1500px);
           background: url(${background});
+          background-position: center;
           margin-right: 4em;
         }
 

@@ -4,7 +4,7 @@ import Link from "next/link";
 const Navbar = () => {
   return (
     <React.Fragment>
-      <div>
+      <nav>
         <ul>
           <li>
             <Link href={"/"}>
@@ -17,10 +17,10 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-      </div>
+      </nav>
 
       <style jsx>{`
-        div {
+        nav {
           height: 30px;
           background: grey;
         }
