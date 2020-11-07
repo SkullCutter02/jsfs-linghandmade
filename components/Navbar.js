@@ -16,20 +16,23 @@ const Navbar = () => {
               <a>About</a>
             </Link>
           </li>
+          <li>
+            <a>Products</a>
+          </li>
         </ul>
       </nav>
 
       <style jsx>{`
         nav {
-          height: 30px;
-          background: grey;
+          height: 50px;
+          background: #dabc97;
         }
 
         ul {
           list-style: none;
           height: 100%;
           display: flex;
-          justify-content: flex-end;
+          justify-content: flex-start;
           align-items: center;
         }
 
@@ -39,7 +42,8 @@ const Navbar = () => {
 
         a {
           text-decoration: none;
-          color: yellow;
+          color: black;
+          font-size: 1.6rem;
         }
       `}</style>
     </React.Fragment>

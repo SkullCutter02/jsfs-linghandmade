@@ -10,10 +10,10 @@ const Home = () => {
     <React.Fragment>
       <Layout>
         <Header titleText={"Ling Handmade"} />
+        <Featured />
         <Information reverse={false} background={"/download.jpeg"} />
         <Information reverse={true} background={"/download.jpeg"} />
         <Information reverse={false} background={"/download.jpeg"} />
-        <Featured />
       </Layout>
     </React.Fragment>
   );
