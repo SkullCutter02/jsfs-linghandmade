@@ -1,11 +1,12 @@
 import React from "react";
 
+import SectionTitle from "./SectionTitle";
+
 const Featured = () => {
   return (
     <React.Fragment>
       <section>
-        <h1>Featured</h1>
-        <div className="line" />
+        <SectionTitle titleText={"Featured"} />
         <div className="grid-container">
           <div className="grid-item">
             <img src={"/download.jpeg"} alt="item" />
@@ -27,20 +28,9 @@ const Featured = () => {
 
       <style jsx>{`
         section {
-          height: 500px;
-        }
-
-        h1 {
-          text-align: center;
-          font-size: 3rem;
-          margin-top: 1em;
-        }
-
-        .line {
-          width: 70px;
-          margin: 0 auto;
-          padding-top: 5px;
-          border-bottom: 4px solid #af9b7d;
+          height: 530px;
+          background: #d3d3d3;
+          padding-top: 1px;
         }
 
         .grid-container {
@@ -69,6 +59,7 @@ const Featured = () => {
         img {
           width: 80%;
           border: 3px solid #af9b7d;
+          box-shadow: 1px 1px 5px #af9b7d;
         }
       `}</style>
     </React.Fragment>

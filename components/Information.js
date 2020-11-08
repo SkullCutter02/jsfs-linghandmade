@@ -1,5 +1,7 @@
 import React from "react";
 
+import SectionTitle from "./SectionTitle";
+
 const Information = ({ reverse, background }) => {
   const style = reverse ? "row-reverse" : "row";
 
@@ -25,7 +27,7 @@ const Information = ({ reverse, background }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: #d3d3d3;
+          background: white;
         }
 
         .container {
