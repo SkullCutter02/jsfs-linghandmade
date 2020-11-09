@@ -25,7 +25,7 @@ const Information = ({ reverse, background }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: #d3d3d3;
+          background: white;
         }
 
         .container {
