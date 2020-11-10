@@ -21,7 +21,7 @@ const Featured = () => {
           {featured ? (
             featured.map((product) => {
               return (
-                <div className="grid-item">
+                <div className="grid-item" key={product.id}>
                   <img
                     src={`http://localhost:1337${product.photo.formats.medium.url}`}
                     alt={product.photo.alternativeText}
@@ -32,7 +32,7 @@ const Featured = () => {
               );
             })
           ) : (
-            <div>Not fetched</div>
+            <div style={{ margin: "0 auto" }}>Loading...</div>
           )}
         </div>
       </section>
@@ -69,7 +69,10 @@ const Featured = () => {
 
         img {
           width: 80%;
+          height: 70%;
+          object-fit: cover;
           border: 3px solid #af9b7d;
+          cursor: pointer;
         }
       `}</style>
     </React.Fragment>
