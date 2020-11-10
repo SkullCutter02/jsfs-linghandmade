@@ -1,28 +1,39 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import SectionTitle from "./SectionTitle";
+import { Context } from "../context";
 
 const Featured = () => {
+  const products = useContext(Context).data;
+  const [featured, setFeatured] = useState();
+
+  useEffect(() => {
+    if (products !== undefined) {
+      setFeatured(products.filter((item) => item.featured === true));
+    }
+  }, [products]);
+
   return (
     <React.Fragment>
       <section>
         <SectionTitle titleText={"Featured"} />
         <div className="grid-container">
-          <div className="grid-item">
-            <img src={"/download.jpeg"} alt="item" />
-            <p className="name">Lavendar Soap</p>
-            <p className="price">$230</p>
-          </div>
-          <div className="grid-item">
-            <img src={"/download.jpeg"} alt="item" />
-            <p className="name">Rose Soap</p>
-            <p className="price">$230</p>
-          </div>
-          <div className="grid-item">
-            <img src={"/download.jpeg"} alt="item" />
-            <p className="name">Sweet Orange Soap</p>
-            <p className="price">$230</p>
-          </div>
+          {featured ? (
+            featured.map((product) => {
+              return (
+                <div className="grid-item">
+                  <img
+                    src={`http://localhost:1337${product.photo.formats.medium.url}`}
+                    alt={product.photo.alternativeText}
+                  />
+                  <p className="name">{product.name}</p>
+                  <p className="price">${product.price}</p>
+                </div>
+              );
+            })
+          ) : (
+            <div>Not fetched</div>
+          )}
         </div>
       </section>
 
