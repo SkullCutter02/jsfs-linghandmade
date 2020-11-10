@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Categories = ({ categories }) => {
   return (
@@ -7,7 +8,9 @@ const Categories = ({ categories }) => {
         {categories.map((category) => {
           return (
             <div className="grid-item" key={category.id}>
-              <img src="/download.jpeg" alt="Pic" />
+              <Link href={`/products/${category.slug}`}>
+                <img src="/download.jpeg" alt="Pic" />
+              </Link>
               <p className="category-name">{category.name}</p>
             </div>
           );
