@@ -36,6 +36,7 @@ const Categories = ({ categories }) => {
         img {
           height: 80%;
           width: 100%;
+          object-fit: cover;
           cursor: pointer;
         }
 
