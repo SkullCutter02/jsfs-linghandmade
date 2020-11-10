@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import { useRouter } from "next/router";
 
 import Layout from "../../../components/Layout";
-import { Provider } from "../../../context";
+import { Context } from "../../../context";
 
 const Category = () => {
   const router = useRouter();
   const { category } = router.query;
 
   return (
-    <Provider>
+    <React.Fragment>
       <Layout>{category}</Layout>
-    </Provider>
+    </React.Fragment>
   );
 };
 

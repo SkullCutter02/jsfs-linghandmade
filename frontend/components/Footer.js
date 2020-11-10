@@ -10,6 +10,8 @@ const Footer = () => {
           crossOrigin="anonymous"
         />
       </Head>
+      <br />
+      <br />
       <div>
         <footer>
           <a href={"https://www.instagram.com/linghandmade18/"}>
@@ -28,6 +30,9 @@ const Footer = () => {
           height: 40px;
           border-top: 1px solid #e4dbcc;
           width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
         }
 
         footer {
