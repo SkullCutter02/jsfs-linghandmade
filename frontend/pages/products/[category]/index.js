@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 
 import Layout from "../../../components/Layout";
-import { Context } from "../../../context";
+import Products from "../../../components/Products";
+import { Provider } from "../../../context";
 
 const Category = () => {
   const router = useRouter();
   const { category } = router.query;
 
   return (
-    <React.Fragment>
-      <Layout>{category}</Layout>
-    </React.Fragment>
+    <Provider>
+      <Layout>
+        <Products category={category} />
+      </Layout>
+    </Provider>
   );
 };
 

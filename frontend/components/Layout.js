@@ -7,7 +7,7 @@ import { Provider } from "../context";
 
 const Layout = (props) => {
   return (
-    <Provider>
+    <React.Fragment>
       <div className="container">
         <Head>
           <title>LHM | High Quality Soap</title>
@@ -23,7 +23,7 @@ const Layout = (props) => {
           position: relative;
         }
       `}</style>
-    </Provider>
+    </React.Fragment>
   );
 };
 

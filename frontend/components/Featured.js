@@ -13,6 +13,14 @@ const Featured = () => {
     }
   }, [products]);
 
+  function showOverlay(e) {
+    e.target.parentNode.firstElementChild.style.opacity = "100%";
+  }
+
+  function hideOverlay(e) {
+    e.target.parentNode.firstElementChild.style.opacity = "0";
+  }
+
   return (
     <React.Fragment>
       <section>
@@ -22,10 +30,20 @@ const Featured = () => {
             featured.map((product) => {
               return (
                 <div className="grid-item" key={product.id}>
-                  <img
-                    src={`http://localhost:1337${product.photo.formats.medium.url}`}
-                    alt={product.photo.alternativeText}
-                  />
+                  <div className="container">
+                    <div
+                      className="overlay"
+                      onMouseEnter={showOverlay}
+                      onMouseLeave={hideOverlay}
+                    />
+                    <button type={"click"} onMouseEnter={showOverlay}>
+                      LEARN MORE
+                    </button>
+                    <img
+                      src={`http://localhost:1337${product.photo.formats.medium.url}`}
+                      alt={product.photo.alternativeText}
+                    />
+                  </div>
                   <p className="name">{product.name}</p>
                   <p className="price">${product.price}</p>
                 </div>
@@ -40,7 +58,7 @@ const Featured = () => {
       <style jsx>{`
         section {
           height: 500px;
-          background: #d3d3d3;
+          background: white;
           padding: 1px 0;
         }
 
@@ -67,12 +85,64 @@ const Featured = () => {
           margin-top: 10px;
         }
 
-        img {
+        .container {
           width: 80%;
           height: 70%;
-          object-fit: cover;
           border: 3px solid #af9b7d;
+          position: relative;
+          display: flex;
+          justify-content: center;
+        }
+
+        .overlay {
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          transition-property: all;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-in;
+        }
+
+        .overlay:hover {
+          opacity: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        button {
+          opacity: 0;
+          position: absolute;
+          align-self: center;
+          width: 40%;
+          height: 15%;
+          background: #af9b7d;
+          border: 3px solid #af9b7d;
+          color: black;
+          font-size: 1rem;
           cursor: pointer;
+          z-index: 3;
+          transition-property: all;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-in;
+        }
+
+        .overlay:hover ~ button {
+          opacity: 100%;
+        }
+
+        button:hover {
+          opacity: 100%;
+          background: none;
+        }
+
+        button:hover ~ .overlay {
+          opacity: 100%;
         }
       `}</style>
     </React.Fragment>
