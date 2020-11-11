@@ -29,6 +29,8 @@ const Featured = () => {
                   alternativeTxt={product.photo.alternativeText}
                   name={product.name}
                   price={product.price}
+                  categorySlug={product.categories[0].slug}
+                  productSlug={product.slug}
                 />
               );
             })

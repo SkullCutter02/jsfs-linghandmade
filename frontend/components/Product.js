@@ -1,6 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
-const Product = ({ product, imgSrc, alternativeTxt, name, price }) => {
+const Product = ({
+  imgSrc,
+  alternativeTxt,
+  name,
+  price,
+  categorySlug,
+  productSlug,
+}) => {
   function showOverlay(e) {
     e.target.parentNode.firstElementChild.style.opacity = "100%";
   }
@@ -18,12 +26,14 @@ const Product = ({ product, imgSrc, alternativeTxt, name, price }) => {
             onMouseEnter={showOverlay}
             onMouseLeave={hideOverlay}
           />
-          <button type={"click"} onMouseEnter={showOverlay}>
-            LEARN MORE
-          </button>
+          <Link href={`/products/${categorySlug}/${productSlug}`}>
+            <button type={"click"} onMouseEnter={showOverlay}>
+              LEARN MORE
+            </button>
+          </Link>
           <img src={imgSrc} alt={alternativeTxt} />
         </div>
-        <p className="name">{name}</p>
+        <a className="name">{name}</a>
         <p className="price">${price}</p>
       </div>
 
@@ -33,6 +43,13 @@ const Product = ({ product, imgSrc, alternativeTxt, name, price }) => {
           justify-content: space-evenly;
           align-items: center;
           flex-direction: column;
+        }
+
+        a {
+          font-size: 1.5rem;
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
         }
 
         p {
@@ -97,10 +114,6 @@ const Product = ({ product, imgSrc, alternativeTxt, name, price }) => {
         button:hover {
           opacity: 100%;
           background: none;
-        }
-
-        button:hover ~ .overlay {
-          opacity: 100%;
         }
       `}</style>
     </React.Fragment>

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 
 import { Context } from "../context";
 import Product from "./Product";
+import SectionTitle from "./SectionTitle";
 
 const Products = ({ category }) => {
   const data = useContext(Context).data;
@@ -17,17 +18,23 @@ const Products = ({ category }) => {
 
   return (
     <React.Fragment>
+      <SectionTitle
+        titleText={
+          category && category.charAt(0).toUpperCase() + category.slice(1)
+        }
+      />
       <div className="grid-container">
         {products ? (
           products.map((product) => {
             return (
               <Product
                 key={product.id}
-                product={product}
                 imgSrc={`http://localhost:1337${product.photo.formats.medium.url}`}
                 alternativeTxt={product.photo.alternativeText}
                 name={product.name}
                 price={product.price}
+                categorySlug={category}
+                productSlug={product.slug}
               />
             );
           })

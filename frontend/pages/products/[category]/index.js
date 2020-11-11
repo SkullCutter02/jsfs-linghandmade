@@ -5,7 +5,7 @@ import Layout from "../../../components/Layout";
 import Products from "../../../components/Products";
 import { Provider } from "../../../context";
 
-const Category = () => {
+const CategoryPage = () => {
   const router = useRouter();
   const { category } = router.query;
 
@@ -18,4 +18,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default CategoryPage;
