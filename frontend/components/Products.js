@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import { Context } from "../context";
+import Product from "./Product";
 
 const Products = ({ category }) => {
   const data = useContext(Context).data;
@@ -14,7 +15,11 @@ const Products = ({ category }) => {
     }
   }, [data]);
 
-  return <React.Fragment>{category}</React.Fragment>;
+  return (
+    <React.Fragment>
+      <div className="grid-container"></div>
+    </React.Fragment>
+  );
 };
 
 export default Products;
