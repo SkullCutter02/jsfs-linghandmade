@@ -17,7 +17,34 @@ const Products = ({ category }) => {
 
   return (
     <React.Fragment>
-      <div className="grid-container"></div>
+      <div className="grid-container">
+        {products ? (
+          products.map((product) => {
+            return (
+              <Product
+                key={product.id}
+                product={product}
+                imgSrc={`http://localhost:1337${product.photo.formats.medium.url}`}
+                alternativeTxt={product.photo.alternativeText}
+                name={product.name}
+                price={product.price}
+              />
+            );
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
+      </div>
+
+      <style jsx>{`
+        .grid-container {
+          width: 100%;
+          height: 100%;
+          margin-top: 2em;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      `}</style>
     </React.Fragment>
   );
 };

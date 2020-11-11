@@ -24,6 +24,7 @@ const Featured = () => {
               return (
                 <Product
                   key={product.id}
+                  product={product}
                   imgSrc={`http://localhost:1337${product.photo.formats.medium.url}`}
                   alternativeTxt={product.photo.alternativeText}
                   name={product.name}

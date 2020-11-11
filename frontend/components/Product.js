@@ -1,6 +1,6 @@
 import React from "react";
 
-const Product = ({ imgSrc, alternativeTxt, name, price }) => {
+const Product = ({ product, imgSrc, alternativeTxt, name, price }) => {
   function showOverlay(e) {
     e.target.parentNode.firstElementChild.style.opacity = "100%";
   }
