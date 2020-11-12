@@ -18,9 +18,7 @@ const Home = () => {
         <Header titleText={"Ling Handmade"} imgSrc={"/download.jpeg"} />
         <Featured />
         <SectionTitle titleText={"Why choose LHM?"} />
-        <Information reverse={false} background={"/download.jpeg"} />
-        <Information reverse={true} background={"/download.jpeg"} />
-        <Information reverse={false} background={"/download.jpeg"} />
+        <Information />
       </Layout>
     </Provider>
   );

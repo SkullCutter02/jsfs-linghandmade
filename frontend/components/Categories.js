@@ -45,6 +45,46 @@ const Categories = ({ categories }) => {
           margin-top: 5px;
           font-size: 2rem;
         }
+
+        @media screen and (max-width: 1100px) {
+          .grid-container {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media screen and (max-width: 800px) {
+          .grid-item {
+            height: 250px;
+          }
+
+          .category-name {
+            font-size: 1.7rem;
+          }
+        }
+
+        @media screen and (max-width: 650px) {
+          .grid-item {
+            height: 220px;
+          }
+
+          .category-name {
+            font-size: 1.4rem;
+          }
+        }
+
+        @media screen and (max-width: 530px) {
+          .grid-container {
+            grid-template-columns: 1fr;
+          }
+
+          .grid-item {
+            height: 300px;
+          }
+
+          .category-name {
+            font-size: 2rem;
+          }
+        }
       `}</style>
     </React.Fragment>
   );

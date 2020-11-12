@@ -117,6 +117,10 @@ const Product = ({
           opacity: 100%;
           background: none;
         }
+
+        @media screen and (max-width: 500px) {
+          margin-bottom: 15px;
+        }
       `}</style>
     </React.Fragment>
   );

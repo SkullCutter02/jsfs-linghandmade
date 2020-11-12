@@ -72,17 +72,19 @@ const Header = ({ titleText, imgSrc }) => {
           }
 
           .title-text {
-            font-size: 2.5rem;
+            font-size: 4rem;
+            text-align: center;
+            margin: 0 auto;
           }
         }
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 550px) {
           header {
             height: 300px;
           }
 
           .title-text {
-            font-size: 2rem;
+            font-size: 3rem;
           }
         }
       `}</style>

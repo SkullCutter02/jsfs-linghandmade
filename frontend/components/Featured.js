@@ -42,7 +42,7 @@ const Featured = () => {
 
       <style jsx>{`
         section {
-          height: 500px;
+          height: auto;
           background: white;
           padding: 1px 0;
         }
@@ -53,6 +53,38 @@ const Featured = () => {
           display: grid;
           grid-auto-flow: row;
           grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media screen and (max-width: 900px) {
+          section {
+            height: 750px;
+          }
+
+          .grid-container {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media screen and (max-width: 700px) {
+          section {
+            height: 1400px;
+          }
+
+          .grid-container {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          section {
+            height: 1300px;
+          }
+        }
+
+        @media screen and (max-width: 370px) {
+          section {
+            height: 1100px;
+          }
         }
       `}</style>
     </React.Fragment>
