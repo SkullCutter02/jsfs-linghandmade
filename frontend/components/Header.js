@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ titleText }) => {
+const Header = ({ titleText, imgSrc }) => {
   return (
     <React.Fragment>
       <header>
@@ -11,11 +11,12 @@ const Header = ({ titleText }) => {
 
       <style jsx>{`
         header {
-          background: url("/download.jpeg");
+          background: url(${imgSrc});
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
           height: 500px;
+          width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -33,6 +34,56 @@ const Header = ({ titleText }) => {
         .title-text {
           color: white;
           font-size: 6rem;
+        }
+
+        @media screen and (max-width: 1000px) {
+          header {
+            height: 450px;
+          }
+
+          .title-text {
+            font-size: 5rem;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          header {
+            height: 400px;
+          }
+
+          .title-text {
+            font-size: 4rem;
+          }
+        }
+
+        @media screen and (max-width: 700px) {
+          header {
+            height: 370px;
+          }
+
+          .title-text {
+            font-size: 3rem;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          header {
+            height: 350px;
+          }
+
+          .title-text {
+            font-size: 2.5rem;
+          }
+        }
+
+        @media screen and (max-width: 400px) {
+          header {
+            height: 300px;
+          }
+
+          .title-text {
+            font-size: 2rem;
+          }
         }
       `}</style>
     </React.Fragment>

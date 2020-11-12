@@ -15,7 +15,7 @@ const Home = () => {
         <link rel="shortcut icon" href="#" />
       </Head>
       <Layout>
-        <Header titleText={"Ling Handmade"} />
+        <Header titleText={"Ling Handmade"} imgSrc={"/download.jpeg"} />
         <Featured />
         <SectionTitle titleText={"Why choose LHM?"} />
         <Information reverse={false} background={"/download.jpeg"} />

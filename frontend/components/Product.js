@@ -33,7 +33,9 @@ const Product = ({
           </Link>
           <img src={imgSrc} alt={alternativeTxt} />
         </div>
-        <a className="name">{name}</a>
+        <Link href={`/products/${categorySlug}/${productSlug}`}>
+          <a className="name">{name}</a>
+        </Link>
         <p className="price">${price}</p>
       </div>
 

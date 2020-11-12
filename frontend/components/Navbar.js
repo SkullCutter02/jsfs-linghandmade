@@ -34,13 +34,14 @@ const Navbar = () => {
         }
 
         li {
-          margin: 3em;
+          margin: 4em;
         }
 
         a {
           text-decoration: none;
           color: black;
           font-size: 1.6rem;
+          padding: 0.5em;
         }
       `}</style>
     </React.Fragment>
