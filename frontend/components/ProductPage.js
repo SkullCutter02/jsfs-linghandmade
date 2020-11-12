@@ -31,11 +31,13 @@ const ProductPage = ({ slug }) => {
         <div className="main-body-section">
           <main>
             <h2 className="description-title">Description:</h2>
-            <p>{product?.description}</p>
+            <p className="description">{product?.description}</p>
           </main>
           <aside>
             <h2>Price: ${product?.price}</h2>
-            <h4>Ingredients: {product?.ingredients}</h4>
+            <h4>
+              <strong>Ingredients:</strong> {product?.ingredients}
+            </h4>
           </aside>
         </div>
       </header>
@@ -110,9 +112,85 @@ const ProductPage = ({ slug }) => {
           width: 45%;
         }
 
+        .description {
+          margin-top: 10px;
+        }
+
         h4 {
           margin-top: 10px;
           font-weight: 400;
+        }
+
+        strong {
+          font-size: 22px;
+          display: block;
+        }
+
+        @media screen and (max-width: 1020px) {
+          .header-title-container {
+            top: 23%;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          .header-title-container {
+            top: 20%;
+          }
+        }
+
+        @media screen and (max-width: 700px) {
+          .header-title-container {
+            top: 17%;
+            height: 22%;
+          }
+
+          .title {
+            font-size: 42px;
+          }
+
+          .main-body-section {
+            flex-direction: column-reverse;
+            align-items: center;
+          }
+
+          main {
+            width: 85%;
+            margin-bottom: 5px;
+          }
+
+          aside {
+            width: 85%;
+            margin-bottom: 15px;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .header-title-container {
+            top: 16%;
+          }
+
+          .title {
+            font-size: 38px;
+          }
+
+          .back {
+            font-size: 0.8rem;
+          }
+        }
+
+        @media screen and (max-width: 500px) {
+          .header-title-container {
+            top: 16%;
+            height: 17%;
+          }
+
+          .title {
+            font-size: 32px;
+          }
+
+          .back {
+            font-size: 0.7rem;
+          }
         }
       `}</style>
     </React.Fragment>

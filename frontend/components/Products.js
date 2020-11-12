@@ -51,6 +51,18 @@ const Products = ({ category }) => {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
         }
+
+        @media screen and (max-width: 1000px) {
+          .grid-container {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .grid-container {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
     </React.Fragment>
   );

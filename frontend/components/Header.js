@@ -79,10 +79,6 @@ const Header = ({ titleText, imgSrc }) => {
         }
 
         @media screen and (max-width: 550px) {
-          header {
-            height: 300px;
-          }
-
           .title-text {
             font-size: 3rem;
           }
