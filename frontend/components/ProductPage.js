@@ -18,7 +18,7 @@ const ProductPage = ({ slug }) => {
     <React.Fragment>
       <header>
         <img
-          src={`http://localhost:1337${product?.photo.formats.large.url}`}
+          src={`http://188.166.253.111${product?.photo.formats.large.url}`}
           alt={product?.photo.alternativeText}
         />
         <div className="header-title-container">

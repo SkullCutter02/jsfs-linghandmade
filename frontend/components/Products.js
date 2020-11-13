@@ -29,7 +29,7 @@ const Products = ({ category }) => {
             return (
               <Product
                 key={product.id}
-                imgSrc={`http://localhost:1337${product.photo.formats.medium.url}`}
+                imgSrc={`http://188.166.253.111${product.photo.formats.medium.url}`}
                 alternativeTxt={product.photo.alternativeText}
                 name={product.name}
                 price={product.price}

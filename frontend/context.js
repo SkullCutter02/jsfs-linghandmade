@@ -6,7 +6,7 @@ export class Provider extends Component {
   state = {};
 
   componentDidMount() {
-    fetch("http://localhost:1337/products")
+    fetch("http://188.166.253.111/products")
       .then((res) => res.json())
       .then((data) => this.setState({ data }))
       .catch((err) => console.log(err));
