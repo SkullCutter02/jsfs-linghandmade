@@ -15,7 +15,7 @@ const ProductsPage = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch("http://localhost:1337/categories");
   const data = await res.json();
 
