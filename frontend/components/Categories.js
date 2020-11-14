@@ -9,7 +9,10 @@ const Categories = ({ categories }) => {
           return (
             <div className="grid-item" key={category.id}>
               <Link href={`/products/${category.slug}`}>
-                <img src="/download.jpeg" alt="Pic" />
+                <img
+                  src={`https://lhmstrapi.herokuapp.com${category?.photo.formats.medium.url}`}
+                  alt={category?.photo.alternativeText}
+                />
               </Link>
               <p className="category-name">{category.name}</p>
             </div>

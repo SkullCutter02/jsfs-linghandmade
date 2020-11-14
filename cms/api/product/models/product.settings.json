@@ -41,8 +41,8 @@
       "required": false
     },
     "categories": {
-      "collection": "category",
-      "via": "products"
+      "via": "products",
+      "collection": "category"
     },
     "featured": {
       "type": "boolean",
@@ -50,7 +50,8 @@
     },
     "slug": {
       "type": "string",
-      "unique": true
+      "unique": true,
+      "required": true
     }
   }
 }
