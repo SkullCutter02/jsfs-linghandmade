@@ -23,6 +23,7 @@ const Navbar = () => {
         nav {
           height: 50px;
           background: #dabc97;
+          width: 100%;
         }
 
         ul {
