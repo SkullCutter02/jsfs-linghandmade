@@ -29,7 +29,7 @@ const Products = ({ category }) => {
             return (
               <Product
                 key={product.id}
-                imgSrc={`https://lhmstrapi.herokuapp.com${product.photo.formats.medium.url}`}
+                imgSrc={`${product.photo.formats.medium.url}`}
                 alternativeTxt={product.photo.alternativeText}
                 name={product.name}
                 price={product.price}

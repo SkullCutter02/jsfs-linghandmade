@@ -18,7 +18,7 @@ const ProductPage = ({ slug }) => {
     <React.Fragment>
       <header>
         <img
-          src={`https://lhmstrapi.herokuapp.com${product?.photo.formats.large.url}`}
+          src={`${product?.photo.formats.large.url}`}
           alt={product?.photo.alternativeText}
         />
         <div className="header-title-container">
