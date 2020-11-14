@@ -7,7 +7,7 @@ import SectionTitle from "../../components/SectionTitle";
 const ProductsPage = () => {
   const [state, setState] = useState();
 
-  fetch("http://188.166.253.111/categories")
+  fetch("https://lhmstrapi.herokuapp.com/categories")
     .then((res) => res.json())
     .then((data) => setState(data))
     .catch((err) => console.log(err));

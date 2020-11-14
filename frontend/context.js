@@ -6,7 +6,7 @@ export class Provider extends Component {
   state = {};
 
   componentDidMount() {
-    fetch("http://188.166.253.111/products")
+    fetch("https://lhmstrapi.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => this.setState({ data }))
       .catch((err) => console.log(err));
