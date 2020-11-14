@@ -83,6 +83,12 @@ const Header = ({ titleText, imgSrc }) => {
             font-size: 3rem;
           }
         }
+
+        @media screen and (max-width: 400px) {
+          .title-text {
+            font-size: 2.5rem;
+          }
+        }
       `}</style>
     </React.Fragment>
   );

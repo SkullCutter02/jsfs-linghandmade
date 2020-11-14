@@ -43,6 +43,21 @@ const Navbar = () => {
           font-size: 1.6rem;
           padding: 0.5em;
         }
+
+        @media screen and (max-width: 500px) {
+          nav {
+            height: 100px;
+          }
+
+          ul {
+            flex-direction: column;
+            justify-content: space-evenly;
+          }
+
+          li {
+            margin: 0 auto;
+          }
+        }
       `}</style>
     </React.Fragment>
   );
