@@ -12,15 +12,11 @@ const ProductsPage = () => {
     .then((data) => setState(data))
     .catch((err) => console.log(err));
 
-  if (!state) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <React.Fragment>
       <Layout>
         <SectionTitle titleText={"Products"} />
-        <Categories categories={state} />
+        {!state ? <div>Loading...</div> : <Categories categories={state} />}
       </Layout>
     </React.Fragment>
   );
