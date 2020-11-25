@@ -20,7 +20,9 @@ const Products = ({ category }) => {
     <React.Fragment>
       <SectionTitle
         titleText={
-          category && category.charAt(0).toUpperCase() + category.slice(1)
+          category &&
+          category.charAt(0).toUpperCase() +
+            category.slice(1).replaceAll("-", " ")
         }
       />
       <div className="grid-container">
