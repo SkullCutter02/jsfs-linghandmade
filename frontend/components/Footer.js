@@ -12,6 +12,7 @@ const Footer = () => {
       </Head>
       <br />
       <br />
+      <br />
       <div>
         <footer>
           <a href={"https://www.instagram.com/linghandmade18/"}>
@@ -26,7 +27,7 @@ const Footer = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-top: 8px;
+          margin-top: 20px;
           height: 40px;
           border-top: 1px solid #e4dbcc;
           width: 100%;

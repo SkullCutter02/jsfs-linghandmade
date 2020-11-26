@@ -46,7 +46,6 @@ const ProductPage = ({ slug }) => {
 
       <style jsx>{`
         .header-hero-component {
-          border: 1px solid red;
           position: relative;
         }
 
