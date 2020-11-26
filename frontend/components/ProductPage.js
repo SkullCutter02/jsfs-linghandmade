@@ -17,16 +17,18 @@ const ProductPage = ({ slug }) => {
   return (
     <React.Fragment>
       <header>
-        <img
-          src={`${product?.photo.formats.large.url}`}
-          alt={product?.photo.alternativeText}
-        />
-        <div className="header-title-container">
-          <h1 className="title">{product?.name}</h1>
-          <div className="line" />
-          <Link href={`/products/${product?.categories[0].slug}`}>
-            <button className="back">BACK</button>
-          </Link>
+        <div className="header-hero-component">
+          <img
+            src={`${product?.photo.formats.large.url}`}
+            alt={product?.photo.alternativeText}
+          />
+          <div className="header-title-container">
+            <h1 className="title">{product?.name}</h1>
+            <div className="line" />
+            <Link href={`/products/${product?.categories[0].slug}`}>
+              <button className="back">BACK</button>
+            </Link>
+          </div>
         </div>
         <div className="main-body-section">
           <main>
@@ -43,18 +45,23 @@ const ProductPage = ({ slug }) => {
       </header>
 
       <style jsx>{`
+        .header-hero-component {
+          border: 1px solid red;
+          position: relative;
+        }
+
         img {
           width: 100%;
-          height: 60vh;
+          height: 450px;
           object-fit: cover;
-          position: relative;
         }
 
         .header-title-container {
           position: absolute;
-          top: 25%;
-          left: 15%;
-          height: 25%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 180px;
           width: 70%;
           background: rgba(0, 0, 0, 0.5);
           display: flex;
@@ -79,8 +86,7 @@ const ProductPage = ({ slug }) => {
         .back {
           width: 120px;
           height: 15%;
-          margin: 0 auto;
-          margin-top: 20px;
+          margin: 20px auto 0;
           background: #af9b7d;
           border: 3px solid #af9b7d;
           color: black;
@@ -126,24 +132,7 @@ const ProductPage = ({ slug }) => {
           display: block;
         }
 
-        @media screen and (max-width: 1020px) {
-          .header-title-container {
-            top: 23%;
-          }
-        }
-
-        @media screen and (max-width: 900px) {
-          .header-title-container {
-            top: 20%;
-          }
-        }
-
         @media screen and (max-width: 700px) {
-          .header-title-container {
-            top: 17%;
-            height: 22%;
-          }
-
           .title {
             font-size: 42px;
           }
@@ -165,10 +154,6 @@ const ProductPage = ({ slug }) => {
         }
 
         @media screen and (max-width: 600px) {
-          .header-title-container {
-            top: 16%;
-          }
-
           .title {
             font-size: 38px;
           }
@@ -179,13 +164,8 @@ const ProductPage = ({ slug }) => {
         }
 
         @media screen and (max-width: 500px) {
-          .header-title-container {
-            top: 16%;
-            height: 17%;
-          }
-
           .title {
-            font-size: 32px;
+            font-size: 28px;
           }
 
           .back {

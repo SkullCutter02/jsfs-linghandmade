@@ -45,6 +45,7 @@ const Product = ({
           justify-content: space-evenly;
           align-items: center;
           flex-direction: column;
+          height: 350px;
         }
 
         a {

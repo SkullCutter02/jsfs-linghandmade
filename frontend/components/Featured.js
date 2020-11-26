@@ -42,7 +42,6 @@ const Featured = () => {
 
       <style jsx>{`
         section {
-          height: auto;
           background: white;
           padding: 1px 0;
         }
