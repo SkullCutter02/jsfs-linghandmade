@@ -18,7 +18,7 @@ const Home = () => {
       <Layout>
         <Header titleText={"Ling Handmade"} imgSrc={"/download.jpeg"} />
         <Featured />
-        <SectionTitle titleText={"Why choose handmade soap?"} />
+        <SectionTitle titleText={"Why handmade soaps?"} />
         <Information info={whyChooseHandmadeSoap} />
         <SectionTitle titleText={"Why choose LHM?"} />
         <Information info={whyChooseLHM} />

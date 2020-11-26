@@ -56,7 +56,7 @@ const Featured = () => {
 
         @media screen and (max-width: 900px) {
           section {
-            height: 750px;
+            height: 840px;
           }
 
           .grid-container {
@@ -66,23 +66,11 @@ const Featured = () => {
 
         @media screen and (max-width: 700px) {
           section {
-            height: 1400px;
+            height: 1170px;
           }
 
           .grid-container {
             grid-template-columns: 1fr;
-          }
-        }
-
-        @media screen and (max-width: 600px) {
-          section {
-            height: 1300px;
-          }
-        }
-
-        @media screen and (max-width: 370px) {
-          section {
-            height: 1100px;
           }
         }
       `}</style>
