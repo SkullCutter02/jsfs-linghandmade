@@ -35,7 +35,7 @@ const Featured = () => {
               );
             })
           ) : (
-            <div style={{ margin: "0 auto" }}>Loading...</div>
+            <div />
           )}
         </div>
       </section>

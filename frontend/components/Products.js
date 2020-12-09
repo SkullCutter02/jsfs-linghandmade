@@ -41,7 +41,7 @@ const Products = ({ category }) => {
             );
           })
         ) : (
-          <div>Loading...</div>
+          <div />
         )}
       </div>
 

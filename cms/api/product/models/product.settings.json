@@ -41,8 +41,8 @@
       "required": false
     },
     "categories": {
-      "via": "products",
-      "collection": "category"
+      "collection": "category",
+      "via": "products"
     },
     "featured": {
       "type": "boolean",
@@ -52,6 +52,15 @@
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "carousel": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

@@ -16,7 +16,7 @@ const ProductsPage = () => {
     <React.Fragment>
       <Layout>
         <SectionTitle titleText={"Products"} />
-        {!state ? <div>Loading...</div> : <Categories categories={state} />}
+        {!state ? <div /> : <Categories categories={state} />}
       </Layout>
     </React.Fragment>
   );
