@@ -1,11 +1,22 @@
 import React, { useContext, useState, useEffect } from "react";
 import Link from "next/link";
 
+import Carousel from "./Carousel";
 import { Context } from "../context";
 
 const ProductPage = ({ slug }) => {
   const products = useContext(Context).data;
   const [product, setProduct] = useState();
+  const [items, setItems] = useState([]);
+
+  const style = {
+    height: "280px",
+    width: "500px",
+    // objectFit: "cover",
+    margin: "20px",
+  };
+
+  const handleDragStart = (e) => e.preventDefault();
 
   useEffect(() => {
     if (products !== undefined) {
@@ -13,6 +24,50 @@ const ProductPage = ({ slug }) => {
       setProduct((product) => product[0]);
     }
   }, [products]);
+
+  useEffect(() => {
+    if (product !== undefined) {
+      let arr = [];
+      product.carousel.forEach((image) => {
+        const imgUrl = image.formats.small.url;
+        const altText = image.alternativeText;
+        arr.push(
+          <img
+            src={imgUrl}
+            alt={altText}
+            key={image.id}
+            onDragEnter={handleDragStart}
+            className="image-carousel"
+            style={style}
+          />
+        );
+      });
+      if (arr.length <= 0) {
+        arr.push(
+          <img
+            src={product.photo.formats.medium.url}
+            alt={product.photo.alternativeText}
+            key={product.photo.id}
+            onDragEnter={handleDragStart}
+            className="image-carousel"
+            style={{ width: "70%", height: "100%", objectFit: "cover" }}
+          />
+        );
+      } else {
+        arr.push(
+          <img
+            src={product.photo.formats.small.url}
+            alt={product.photo.alternativeText}
+            key={product.photo.id}
+            onDragEnter={handleDragStart}
+            className="image-carousel"
+            style={style}
+          />
+        );
+      }
+      setItems(arr);
+    }
+  }, [product]);
 
   return (
     <React.Fragment>
@@ -30,6 +85,21 @@ const ProductPage = ({ slug }) => {
             </Link>
           </div>
         </div>
+
+        {/*{items.length === product?.carousel.length + 1 ? (*/}
+        {/*  <Carousel items={items} />*/}
+        {/*) : (*/}
+        {/*  <div />*/}
+        {/*)}*/}
+
+        {items.length === 1 ? (
+          <div className="extra-img">{items}</div>
+        ) : items.length === product?.carousel.length + 1 ? (
+          <Carousel items={items} />
+        ) : (
+          <div />
+        )}
+
         <div className="main-body-section">
           <main>
             <h2 className="description-title">Description:</h2>
@@ -45,6 +115,8 @@ const ProductPage = ({ slug }) => {
       </header>
 
       <style jsx>{`
+        // Hero
+
         .header-hero-component {
           position: relative;
         }
@@ -100,11 +172,13 @@ const ProductPage = ({ slug }) => {
           background: none;
         }
 
+        // Main
+
         .main-body-section {
           width: 100%;
           display: flex;
           justify-content: space-evenly;
-          margin: 10px;
+          margin: 40px 10px;
         }
 
         main {
@@ -131,6 +205,16 @@ const ProductPage = ({ slug }) => {
           display: block;
         }
 
+        .extra-img {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 350px;
+          margin-top: 40px;
+        }
+
+        // Media Queries
+
         @media screen and (max-width: 700px) {
           .title {
             font-size: 42px;
@@ -149,6 +233,10 @@ const ProductPage = ({ slug }) => {
           aside {
             width: 85%;
             margin-bottom: 15px;
+          }
+
+          .extra-img {
+            height: 200px;
           }
         }
 
