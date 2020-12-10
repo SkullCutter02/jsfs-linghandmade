@@ -119,6 +119,7 @@ const ProductPage = ({ slug }) => {
 
         .header-hero-component {
           position: relative;
+          width: 100%;
         }
 
         img {
@@ -175,7 +176,9 @@ const ProductPage = ({ slug }) => {
         // Main
 
         .main-body-section {
-          width: 100%;
+          width: calc(
+            100% - 10px - 5px
+          ); // minus the main's margin-right and the aside's margin-right
           display: flex;
           justify-content: space-evenly;
           margin: 40px 10px;
