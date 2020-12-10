@@ -6,55 +6,56 @@ import "react-alice-carousel/lib/alice-carousel.css";
 const Carousel = ({ items }) => {
   const responsive = {
     0: { items: 1 },
-    1024: { items: 3 },
+    520: { items: 1 },
+    1024: { items: 2 },
   };
 
-  const [windowSize, setWindowSize] = useState();
-
-  useEffect(() => {
-    setWindowSize(window.innerWidth);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      setWindowSize(window.innerWidth);
-
-      return () => {
-        window.removeEventListener("resize", () => {
-          setWindowSize(window.innerWidth);
-        });
-      };
-    });
-  });
-
-  useEffect(() => {
-    // console.log(windowSize);
-    const images = Array.from(
-      document.getElementsByClassName("image-carousel")
-    );
-
-    if (windowSize < 550) {
-      images.map((image) => {
-        image.style.height = "190px";
-        image.style.width = "270px";
-      });
-    } else if (windowSize < 700) {
-      images.map((image) => {
-        image.style.height = "300px";
-        image.style.width = "500px";
-      });
-    } else if (windowSize > 700) {
-      images.map((image) => (image.style.height = "340px"));
-    }
-  }, [windowSize]);
+  // const [windowSize, setWindowSize] = useState();
+  //
+  // useEffect(() => {
+  //   setWindowSize(window.innerWidth);
+  // }, []);
+  //
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => {
+  //     setWindowSize(window.innerWidth);
+  //
+  //     return () => {
+  //       window.removeEventListener("resize", () => {
+  //         setWindowSize(window.innerWidth);
+  //       });
+  //     };
+  //   });
+  // });
+  //
+  // useEffect(() => {
+  //   // console.log(windowSize);
+  //   const images = Array.from(
+  //     document.getElementsByClassName("image-carousel")
+  //   );
+  //
+  //   if (windowSize < 550) {
+  //     images.map((image) => {
+  //       image.style.height = "190px";
+  //       image.style.width = "270px";
+  //     });
+  //   } else if (windowSize < 700) {
+  //     images.map((image) => {
+  //       image.style.height = "300px";
+  //       image.style.width = "500px";
+  //     });
+  //   } else if (windowSize > 700) {
+  //     images.map((image) => (image.style.height = "340px"));
+  //   }
+  // }, [windowSize]);
 
   return (
     <React.Fragment>
       <div>
         <AliceCarousel
           mouseTracking
-          autoWidth
-          autoHeight
+          // autoWidth
+          // autoHeight
           autoPlay
           autoPlayDirection={"ltr"}
           autoPlayInterval={5000}

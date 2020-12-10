@@ -38,7 +38,7 @@ const ProductPage = ({ slug }) => {
             key={image.id}
             onDragEnter={handleDragStart}
             className="image-carousel"
-            style={style}
+            // style={style}
           />
         );
       });
@@ -61,7 +61,7 @@ const ProductPage = ({ slug }) => {
             key={product.photo.id}
             onDragEnter={handleDragStart}
             className="image-carousel"
-            style={style}
+            // style={style}
           />
         );
       }
