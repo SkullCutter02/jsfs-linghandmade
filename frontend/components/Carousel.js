@@ -15,8 +15,6 @@ const Carousel = ({ items }) => {
       <div>
         <AliceCarousel
           mouseTracking
-          // autoWidth
-          // autoHeight
           autoPlay
           autoPlayDirection={"ltr"}
           autoPlayInterval={5000}

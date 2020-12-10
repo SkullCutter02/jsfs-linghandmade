@@ -9,13 +9,6 @@ const ProductPage = ({ slug }) => {
   const [product, setProduct] = useState();
   const [items, setItems] = useState([]);
 
-  const style = {
-    height: "280px",
-    width: "500px",
-    // objectFit: "cover",
-    margin: "20px",
-  };
-
   const handleDragStart = (e) => e.preventDefault();
 
   useEffect(() => {
@@ -38,7 +31,6 @@ const ProductPage = ({ slug }) => {
             key={image.id}
             onDragEnter={handleDragStart}
             className="image-carousel"
-            // style={style}
           />
         );
       });
@@ -61,7 +53,6 @@ const ProductPage = ({ slug }) => {
             key={product.photo.id}
             onDragEnter={handleDragStart}
             className="image-carousel"
-            // style={style}
           />
         );
       }
@@ -85,12 +76,6 @@ const ProductPage = ({ slug }) => {
             </Link>
           </div>
         </div>
-
-        {/*{items.length === product?.carousel.length + 1 ? (*/}
-        {/*  <Carousel items={items} />*/}
-        {/*) : (*/}
-        {/*  <div />*/}
-        {/*)}*/}
 
         {items.length === 1 ? (
           <div className="extra-img">{items}</div>
@@ -175,7 +160,7 @@ const ProductPage = ({ slug }) => {
         // Main
 
         .main-body-section {
-          width: 100%;
+          width: calc(100% - 10px - 5px);
           display: flex;
           justify-content: space-evenly;
           margin: 40px 10px;
