@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import SectionTitle from "./SectionTitle";
 import Product from "./Product";
 import { Context } from "../context";
+import spinner from "../spinner";
 
 const Featured = () => {
   const products = useContext(Context).data;
@@ -18,9 +19,9 @@ const Featured = () => {
     <React.Fragment>
       <section>
         <SectionTitle titleText={"Featured"} />
-        <div className="grid-container">
-          {featured ? (
-            featured.map((product) => {
+        {featured ? (
+          <div className="grid-container">
+            {featured.map((product) => {
               return (
                 <Product
                   key={product.id}
@@ -33,11 +34,11 @@ const Featured = () => {
                   productSlug={product.slug}
                 />
               );
-            })
-          ) : (
-            <div />
-          )}
-        </div>
+            })}
+          </div>
+        ) : (
+          <img className="spinner" src={spinner} alt="Spinner" />
+        )}
       </section>
 
       <style jsx>{`
@@ -52,6 +53,11 @@ const Featured = () => {
           display: grid;
           grid-auto-flow: row;
           grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .spinner {
+          margin: 0 auto;
+          display: block;
         }
 
         @media screen and (max-width: 900px) {
