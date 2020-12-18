@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../context";
 import Product from "./Product";
 import SectionTitle from "./SectionTitle";
+import spinner from "../spinner";
 
 const Products = ({ category }) => {
   const data = useContext(Context).data;
@@ -25,9 +26,9 @@ const Products = ({ category }) => {
             category.slice(1).replaceAll("-", " ")
         }
       />
-      <div className="grid-container">
-        {products ? (
-          products.map((product) => {
+      {products ? (
+        <div className="grid-container">
+          {products.map((product) => {
             return (
               <Product
                 key={product.id}
@@ -39,11 +40,16 @@ const Products = ({ category }) => {
                 productSlug={product.slug}
               />
             );
-          })
-        ) : (
-          <div />
-        )}
-      </div>
+          })}
+        </div>
+      ) : (
+        <img
+          className="spinner"
+          src={spinner}
+          alt="spinner"
+          style={{ margin: "0 auto", display: "block" }}
+        />
+      )}
 
       <style jsx>{`
         .grid-container {

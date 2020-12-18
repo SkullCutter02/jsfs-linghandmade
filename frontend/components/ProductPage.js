@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Carousel from "./Carousel";
 import { Context } from "../context";
+import spinner from "../spinner";
 
 const ProductPage = ({ slug }) => {
   const products = useContext(Context).data;
@@ -63,43 +64,55 @@ const ProductPage = ({ slug }) => {
   return (
     <React.Fragment>
       <header>
-        <div className="header-hero-component">
-          <img
-            src={`${product?.photo.formats.large.url}`}
-            alt={product?.photo.alternativeText}
-          />
-          <div className="header-title-container">
-            <h1 className="title">{product?.name}</h1>
-            <div className="line" />
-            <Link href={`/products/${product?.categories[0].slug}`}>
-              <button className="back">BACK</button>
-            </Link>
+        {product ? (
+          <div>
+            <div className="header-hero-component">
+              <img
+                src={`${product?.photo.formats.large.url}`}
+                alt={product?.photo.alternativeText}
+              />
+              <div className="header-title-container">
+                <h1 className="title">{product?.name}</h1>
+                <div className="line" />
+                <Link href={`/products/${product?.categories[0].slug}`}>
+                  <button className="back">BACK</button>
+                </Link>
+              </div>
+            </div>
+
+            {items.length === 1 ? (
+              <div className="extra-img">{items}</div>
+            ) : items.length === product?.carousel.length + 1 ? (
+              <Carousel items={items} />
+            ) : (
+              <div />
+            )}
+
+            <div className="main-body-section">
+              <main>
+                <h2 className="description-title">Description:</h2>
+                <p className="description">{product?.description}</p>
+              </main>
+              <aside>
+                <h2>Price: ${product?.price}</h2>
+                <h4>
+                  <strong>Ingredients:</strong> {product?.ingredients}
+                </h4>
+              </aside>
+            </div>
           </div>
-        </div>
-
-        {items.length === 1 ? (
-          <div className="extra-img">{items}</div>
-        ) : items.length === product?.carousel.length + 1 ? (
-          <Carousel items={items} />
         ) : (
-          <div />
+          <img className="spinner" src={spinner} alt="spinner" />
         )}
-
-        <div className="main-body-section">
-          <main>
-            <h2 className="description-title">Description:</h2>
-            <p className="description">{product?.description}</p>
-          </main>
-          <aside>
-            <h2>Price: ${product?.price}</h2>
-            <h4>
-              <strong>Ingredients:</strong> {product?.ingredients}
-            </h4>
-          </aside>
-        </div>
       </header>
 
       <style jsx>{`
+        .spinner {
+          display: block;
+          margin: 0 auto;
+          width: 200px;
+        }
+
         // Hero
 
         .header-hero-component {
