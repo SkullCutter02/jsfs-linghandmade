@@ -55,11 +55,6 @@ const Featured = () => {
           grid-template-columns: 1fr 1fr 1fr;
         }
 
-        .spinner {
-          margin: 0 auto;
-          display: block;
-        }
-
         @media screen and (max-width: 900px) {
           section {
             height: 840px;

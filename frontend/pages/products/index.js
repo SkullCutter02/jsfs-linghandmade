@@ -20,12 +20,7 @@ const ProductsPage = () => {
       <Layout>
         <SectionTitle titleText={"Products"} />
         {!state ? (
-          <img
-            src={spinner}
-            alt="spinner"
-            className="spinner"
-            style={{ margin: "0 auto", display: "block" }}
-          />
+          <img src={spinner} alt="spinner" className="spinner" />
         ) : (
           <Categories categories={state} />
         )}

@@ -43,12 +43,7 @@ const Products = ({ category }) => {
           })}
         </div>
       ) : (
-        <img
-          className="spinner"
-          src={spinner}
-          alt="spinner"
-          style={{ margin: "0 auto", display: "block" }}
-        />
+        <img className="spinner" src={spinner} alt="spinner" />
       )}
 
       <style jsx>{`

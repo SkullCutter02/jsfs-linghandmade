@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+.spinner {
+  margin: 0 auto;
+  display: block;
+}
+
+@media screen and (max-width: 700px) {
+  .spinner {
+    width: 100%;
+  }
+}
+
 body {
   width: 100%;
 }
