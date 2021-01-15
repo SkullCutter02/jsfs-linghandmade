@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { Context } from "../context/context";
+import { ProductsContext } from "../context/ProductsContext";
 import Product from "./Product";
 import SectionTitle from "./SectionTitle";
 import spinner from "../utils/spinner";
 import host from "../utils/host";
 
 const Products = ({ category }) => {
-  const data = useContext(Context).data;
+  const data = useContext(ProductsContext).data;
   const [products, setProducts] = useState();
 
   useEffect(() => {

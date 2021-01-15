@@ -3,18 +3,18 @@ import { useRouter } from "next/router";
 
 import Layout from "../../../components/Layout";
 import Products from "../../../components/Products";
-import { Provider } from "../../../context/context";
+import { ProductsProvider } from "../../../context/ProductsContext";
 
 const CategoryPage = () => {
   const router = useRouter();
   const { category } = router.query;
 
   return (
-    <Provider>
+    <ProductsProvider>
       <Layout>
         <Products category={category} />
       </Layout>
-    </Provider>
+    </ProductsProvider>
   );
 };
 

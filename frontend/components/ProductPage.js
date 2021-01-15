@@ -2,12 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import Link from "next/link";
 
 import Carousel from "./Carousel";
-import { Context } from "../context/context";
+import { ProductsContext } from "../context/ProductsContext";
 import spinner from "../utils/spinner";
 import host from "../utils/host";
 
 const ProductPage = ({ slug }) => {
-  const products = useContext(Context).data;
+  const products = useContext(ProductsContext).data;
   const [product, setProduct] = useState();
   const [items, setItems] = useState([]);
 

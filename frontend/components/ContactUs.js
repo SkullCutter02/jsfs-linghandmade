@@ -58,7 +58,7 @@ const ContactUs = () => {
           height: 55px;
           margin: 15px 0;
           border: 1px solid lightgrey;
-          text-indent: 5px;
+          text-indent: 15px;
         }
 
         input::placeholder,
@@ -69,12 +69,24 @@ const ContactUs = () => {
         textarea {
           resize: none;
           height: 300px;
+          padding: 10px 0;
         }
 
         .send-btn {
           margin-top: 5px;
           width: 150px;
           height: 40px;
+        }
+
+        button {
+          cursor: pointer;
+        }
+
+        @media screen and (max-width: 700px) {
+          input,
+          textarea {
+            width: 80%;
+          }
         }
       `}</style>
     </React.Fragment>

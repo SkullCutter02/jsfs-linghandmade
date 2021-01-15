@@ -7,12 +7,12 @@ import Information from "../components/Information";
 import Featured from "../components/Featured";
 import SectionTitle from "../components/SectionTitle";
 import ContactUs from "../components/ContactUs";
-import { Provider } from "../context/context";
+import { ProductsProvider } from "../context/ProductsContext";
 import { whyChooseHandmadeSoap, whyChooseLHM } from "../utils/informationText";
 
 const Home = () => {
   return (
-    <Provider>
+    <ProductsProvider>
       <Head>
         <link rel="shortcut icon" href="#" />
       </Head>
@@ -26,7 +26,7 @@ const Home = () => {
         <SectionTitle titleText={"Contact Us"} />
         <ContactUs />
       </Layout>
-    </Provider>
+    </ProductsProvider>
   );
 };
 

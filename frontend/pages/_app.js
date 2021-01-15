@@ -1,11 +1,16 @@
 import React from "react";
-import { Provider } from "../context/context";
+
+import { ProductsProvider } from "../context/ProductsContext";
+import { CartProvider } from "../context/CartContext";
+
 import "../styles.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <Provider>
-      <Component {...pageProps} />
-    </Provider>
+    <ProductsProvider>
+      <CartProvider>
+        <Component {...pageProps} />
+      </CartProvider>
+    </ProductsProvider>
   );
 }

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import host from "../utils/host";
 
-export const Context = React.createContext(undefined);
+export const ProductsContext = React.createContext(undefined);
 
-export class Provider extends Component {
+export class ProductsProvider extends Component {
   state = {};
 
   componentDidMount() {
@@ -16,9 +16,9 @@ export class Provider extends Component {
 
   render() {
     return (
-      <Context.Provider value={this.state}>
+      <ProductsContext.Provider value={this.state}>
         {this.props.children}
-      </Context.Provider>
+      </ProductsContext.Provider>
     );
   }
 }

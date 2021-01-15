@@ -2,12 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 
 import SectionTitle from "./SectionTitle";
 import Product from "./Product";
-import { Context } from "../context/context";
+import { ProductsContext } from "../context/ProductsContext";
 import spinner from "../utils/spinner";
 import host from "../utils/host";
 
 const Featured = () => {
-  const products = useContext(Context).data;
+  const products = useContext(ProductsContext).data;
   const [featured, setFeatured] = useState();
 
   useEffect(() => {
