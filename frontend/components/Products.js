@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import { Context } from "../context";
+import { Context } from "../context/context";
 import Product from "./Product";
 import SectionTitle from "./SectionTitle";
-import spinner from "../spinner";
+import spinner from "../utils/spinner";
+import host from "../utils/host";
 
 const Products = ({ category }) => {
   const data = useContext(Context).data;
@@ -19,20 +20,22 @@ const Products = ({ category }) => {
 
   return (
     <React.Fragment>
-      <SectionTitle
-        titleText={
-          category &&
-          category.charAt(0).toUpperCase() +
-            category.slice(1).replaceAll("-", " ")
-        }
-      />
+      {products && (
+        <SectionTitle
+          titleText={(products && products[0]?.categories[0].name) || category}
+        />
+      )}
       {products ? (
         <div className="grid-container">
           {products.map((product) => {
             return (
               <Product
                 key={product.id}
-                imgSrc={`${product.photo.formats.medium.url}`}
+                imgSrc={`${
+                  host === "http://localhost:1337"
+                    ? "http://localhost:1337"
+                    : ""
+                }${product.photo.formats.medium.url}`}
                 alternativeTxt={product.photo.alternativeText}
                 name={product.name}
                 price={product.price}

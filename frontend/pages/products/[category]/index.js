@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import Layout from "../../../components/Layout";
 import Products from "../../../components/Products";
-import { Provider } from "../../../context";
+import { Provider } from "../../../context/context";
 
 const CategoryPage = () => {
   const router = useRouter();

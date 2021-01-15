@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 
 import SectionTitle from "./SectionTitle";
 import Product from "./Product";
-import { Context } from "../context";
-import spinner from "../spinner";
+import { Context } from "../context/context";
+import spinner from "../utils/spinner";
+import host from "../utils/host";
 
 const Featured = () => {
   const products = useContext(Context).data;
@@ -26,7 +27,11 @@ const Featured = () => {
                 <Product
                   key={product.id}
                   product={product}
-                  imgSrc={`${product.photo.formats.medium.url}`}
+                  imgSrc={`${
+                    host === "http://localhost:1337"
+                      ? "http://localhost:1337"
+                      : ""
+                  }${product.photo.formats.medium.url}`}
                   alternativeTxt={product.photo.alternativeText}
                   name={product.name}
                   price={product.price}

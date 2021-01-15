@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-import { Provider } from "../../../../context";
+import { Provider } from "../../../../context/context";
 import ProductPage from "../../../../components/ProductPage";
 import Layout from "../../../../components/Layout";
 

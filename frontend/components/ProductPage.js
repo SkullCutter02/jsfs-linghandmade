@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import Link from "next/link";
 
 import Carousel from "./Carousel";
-import { Context } from "../context";
-import spinner from "../spinner";
+import { Context } from "../context/context";
+import spinner from "../utils/spinner";
+import host from "../utils/host";
 
 const ProductPage = ({ slug }) => {
   const products = useContext(Context).data;
@@ -27,7 +28,9 @@ const ProductPage = ({ slug }) => {
         const altText = image.alternativeText;
         arr.push(
           <img
-            src={imgUrl}
+            src={`${
+              host === "http://localhost:1337" ? "http://localhost:1337" : ""
+            }${imgUrl}`}
             alt={altText}
             key={image.id}
             onDragEnter={handleDragStart}
@@ -38,7 +41,9 @@ const ProductPage = ({ slug }) => {
       if (arr.length <= 0) {
         arr.push(
           <img
-            src={product.photo.formats.medium.url}
+            src={`${
+              host === "http://localhost:1337" ? "http://localhost:1337" : ""
+            }${product.photo.formats.medium.url}`}
             alt={product.photo.alternativeText}
             key={product.photo.id}
             onDragEnter={handleDragStart}
@@ -49,7 +54,9 @@ const ProductPage = ({ slug }) => {
       } else {
         arr.push(
           <img
-            src={product.photo.formats.small.url}
+            src={`${
+              host === "http://localhost:1337" ? "http://localhost:1337" : ""
+            }${product.photo.formats.small.url}`}
             alt={product.photo.alternativeText}
             key={product.photo.id}
             onDragEnter={handleDragStart}
@@ -68,7 +75,11 @@ const ProductPage = ({ slug }) => {
           <div>
             <div className="header-hero-component">
               <img
-                src={`${product?.photo.formats.large.url}`}
+                src={`${
+                  host === "http://localhost:1337"
+                    ? "http://localhost:1337"
+                    : ""
+                }${product?.photo.formats.large.url}`}
                 alt={product?.photo.alternativeText}
               />
               <div className="header-title-container">

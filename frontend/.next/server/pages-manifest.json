@@ -4,7 +4,7 @@
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
   "/products": "pages/products.js",
-  "/products/[category]": "pages/products/[category].js",
   "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
-  "/products/[category]/[slug]": "pages/products/[category]/[slug].js"
+  "/products/[category]/[slug]": "pages/products/[category]/[slug].js",
+  "/products/[category]": "pages/products/[category].js"
 }
