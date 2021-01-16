@@ -128,7 +128,9 @@ const ProductPage = ({ slug }) => {
                   {cartContext?.cartItems?.some(
                     (item) => product.name === item.name
                   ) ? (
-                    <button className="add-cart-btn in-cart">In Cart</button>
+                    <Link href={"/cart"}>
+                      <button className="add-cart-btn in-cart">In Cart</button>
+                    </Link>
                   ) : (
                     <button
                       className="add-cart-btn"

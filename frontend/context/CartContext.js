@@ -9,13 +9,14 @@ export const CartProvider = (props) => {
         ...old,
         cartItems: [...old.cartItems, item],
       }));
-      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
     removeItem: function (item) {
-      const arr = state.cartItems.filter(
-        (cartItem) => cartItem.name !== item.name
-      );
-      setState((old) => ({ ...old, cartItems: arr }));
+      setState((old) => ({
+        ...old,
+        cartItems: old.cartItems.filter(
+          (cartItem) => cartItem.name !== item.name
+        ),
+      }));
     },
     cartItems: [],
   });

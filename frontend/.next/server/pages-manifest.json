@@ -3,6 +3,9 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/products/[category]/[slug]": "pages/products/[category]/[slug].js",
-  "/cart": "pages/cart.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js"
+  "/products": "pages/products.js",
+  "/products/[category]": "pages/products/[category].js",
+  "/": "pages/index.js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/cart": "pages/cart.js"
 }
