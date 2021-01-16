@@ -4,6 +4,7 @@ import { ProductsProvider } from "../context/ProductsContext";
 import { CartProvider } from "../context/CartContext";
 
 import "../styles.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (

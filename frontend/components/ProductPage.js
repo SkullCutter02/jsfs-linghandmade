@@ -3,13 +3,16 @@ import Link from "next/link";
 
 import Carousel from "./Carousel";
 import { ProductsContext } from "../context/ProductsContext";
+import { CartContext } from "../context/CartContext";
 import spinner from "../utils/spinner";
 import host from "../utils/host";
 
 const ProductPage = ({ slug }) => {
-  const products = useContext(ProductsContext).data;
   const [product, setProduct] = useState();
   const [items, setItems] = useState([]);
+
+  const products = useContext(ProductsContext).data;
+  const cartContext = useContext(CartContext);
 
   const handleDragStart = (e) => e.preventDefault();
 
@@ -68,8 +71,23 @@ const ProductPage = ({ slug }) => {
     }
   }, [product]);
 
+  const addToCart = (product) => {
+    const notification = document.getElementById("notification");
+
+    notification.style.visibility = "visible";
+
+    cartContext.setItems(product);
+
+    setTimeout(() => {
+      notification.style.visibility = "hidden";
+    }, [2000]);
+  };
+
   return (
     <React.Fragment>
+      <div id="notification">
+        <h2>{product?.name} is added to your shopping cart!</h2>
+      </div>
       <header>
         {product ? (
           <div>
@@ -105,7 +123,21 @@ const ProductPage = ({ slug }) => {
                 <p className="description">{product?.description}</p>
               </main>
               <aside>
-                <h2>Price: ${product?.price}</h2>
+                <div className="price-add-cart">
+                  <h2>Price: ${product?.price}</h2>
+                  {cartContext?.cartItems?.some(
+                    (item) => product.name === item.name
+                  ) ? (
+                    <button className="add-cart-btn in-cart">In Cart</button>
+                  ) : (
+                    <button
+                      className="add-cart-btn"
+                      onClick={() => addToCart(product)}
+                    >
+                      Add to Cart
+                    </button>
+                  )}
+                </div>
                 <h4>
                   <strong>Ingredients:</strong> {product?.ingredients}
                 </h4>
@@ -118,6 +150,29 @@ const ProductPage = ({ slug }) => {
       </header>
 
       <style jsx>{`
+        #notification {
+          position: fixed;
+          padding: 20px 0;
+          z-index: 1000;
+          width: 500px;
+          margin: 5% auto;
+          left: 0;
+          right: 0;
+          background: #e9e9e9;
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          visibility: hidden;
+          transition: visibility 3s;
+        }
+
+        #notification h2 {
+          color: #2d2d2d;
+          margin: 0 20px;
+          text-align: center;
+        }
+
         .spinner {
           display: block;
           margin: 0 auto;
@@ -220,6 +275,35 @@ const ProductPage = ({ slug }) => {
           width: 100%;
           height: 350px;
           margin-top: 40px;
+        }
+
+        .price-add-cart {
+          display: flex;
+          align-items: center;
+        }
+
+        .add-cart-btn {
+          height: 25px;
+          width: 110px;
+          border: none;
+          background: #3580c2;
+          color: #fff;
+          border-radius: 4px;
+          font-size: 0.8rem;
+          cursor: pointer;
+          margin: 0 40px;
+        }
+
+        .add-cart-btn:hover {
+          background: #1d649b;
+        }
+
+        .in-cart {
+          background: #12bf12;
+        }
+
+        .in-cart:hover {
+          background: #04a204;
         }
 
         // Media Queries
