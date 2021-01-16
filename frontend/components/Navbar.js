@@ -19,9 +19,11 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div className="icon">
-          <FontAwesomeIcon icon={faShoppingCart} color={"grey"} size={"2x"} />
-        </div>
+        <Link href={"/cart"}>
+          <div className="icon">
+            <FontAwesomeIcon icon={faShoppingCart} color={"grey"} size={"2x"} />
+          </div>
+        </Link>
       </nav>
 
       <style jsx>{`

@@ -76,7 +76,7 @@ const ProductPage = ({ slug }) => {
 
     notification.style.visibility = "visible";
 
-    cartContext.setItems(product);
+    cartContext.setItem(product);
 
     setTimeout(() => {
       notification.style.visibility = "hidden";

@@ -4,16 +4,18 @@ export const CartContext = createContext(null);
 
 export const CartProvider = (props) => {
   const [state, setState] = useState({
-    setItems: function (item) {
-      setState((old) => ({ ...old, cartItems: [...old.cartItems, item] }));
+    setItem: function (item) {
+      setState((old) => ({
+        ...old,
+        cartItems: [...old.cartItems, item],
+      }));
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
-    removeItems: function (item) {
-      setState((old) => {
-        const arr = old.cartItems.filter(
-          (cartItem) => item.name !== cartItem.name
-        );
-        ({ ...old, cartItems: arr });
-      });
+    removeItem: function (item) {
+      const arr = state.cartItems.filter(
+        (cartItem) => cartItem.name !== item.name
+      );
+      setState((old) => ({ ...old, cartItems: arr }));
     },
     cartItems: [],
   });
