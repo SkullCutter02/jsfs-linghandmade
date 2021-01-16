@@ -6,6 +6,5 @@
   "/products": "pages/products.js",
   "/products/[category]": "pages/products/[category].js",
   "/": "pages/index.js",
-  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
   "/cart": "pages/cart.js"
 }

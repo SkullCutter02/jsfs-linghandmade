@@ -35,20 +35,20 @@ const CartPage = () => {
         <div className="container">
           {cartContext ? (
             cartContext.cartItems.map((cartItem) => (
-              <React.Fragment>
-                <div className="cart-item-container">
-                  <div className="left">
-                    <img
-                      className="item-img"
-                      src={`${
-                        host === "http://localhost:1337"
-                          ? "http://localhost:1337"
-                          : ""
-                      }${cartItem?.photo.formats.small.url}`}
-                      alt={cartItem?.photo.alternativeText}
-                    />
-                  </div>
-                  <div className="right">
+              <div className="cart-item-container">
+                <div className="left">
+                  <img
+                    className="item-img"
+                    src={`${
+                      host === "http://localhost:1337"
+                        ? "http://localhost:1337"
+                        : ""
+                    }${cartItem?.photo.formats.small.url}`}
+                    alt={cartItem?.photo.alternativeText}
+                  />
+                </div>
+                <div className="right">
+                  <div>
                     <Link
                       href={`/products/${cartItem.categories[0].slug}/${cartItem.slug}`}
                     >
@@ -57,18 +57,18 @@ const CartPage = () => {
                     <p className="product-description">
                       {cartItem.description}
                     </p>
-                    <div className="price-remove-cart-btn">
-                      <p className="product-price">${cartItem.price}</p>
-                      <button
-                        className="remove-cart-btn"
-                        onClick={() => removeFromCart(cartItem)}
-                      >
-                        Remove from Cart
-                      </button>
-                    </div>
+                  </div>
+                  <div className="price-remove-cart-btn">
+                    <p className="product-price">${cartItem.price}</p>
+                    <button
+                      className="remove-cart-btn"
+                      onClick={() => removeFromCart(cartItem)}
+                    >
+                      Remove from Cart
+                    </button>
                   </div>
                 </div>
-              </React.Fragment>
+              </div>
             ))
           ) : (
             <img className="spinner" src={spinner} alt="spinner" />
@@ -94,9 +94,10 @@ const CartPage = () => {
         .cart-item-container {
           width: 100%;
           margin: 50px 0;
-          border: 2px solid grey;
+          border: 2px solid #808080;
           display: flex;
           padding: 20px;
+          height: auto;
         }
 
         .left {
@@ -123,11 +124,11 @@ const CartPage = () => {
 
         .product-description {
           display: block;
-          text-overflow: ellipsis;
           word-wrap: break-word;
           overflow: hidden;
           line-height: 1.4em;
-          max-height: ${1.4 * 5}em;
+          max-height: ${1.4 * 6}em;
+          margin: 10px 0;
         }
 
         .price-remove-cart-btn {
@@ -144,7 +145,7 @@ const CartPage = () => {
 
         .remove-cart-btn {
           cursor: pointer;
-          width: 100px;
+          min-width: 100px;
           height: 25px;
           border: none;
           font-size: 0.6rem;
@@ -162,6 +163,29 @@ const CartPage = () => {
           float: right;
           transform: translateY(-20px);
           font-size: 1.3rem;
+        }
+
+        @media screen and (max-width: 600px) {
+          .left,
+          .right {
+            width: 100%;
+          }
+
+          .right {
+            margin-top: 20px;
+          }
+
+          .cart-item-container {
+            flex-direction: column;
+          }
+
+          .price-remove-cart-btn {
+            margin-top: 10px;
+          }
+
+          .product-description {
+            max-height: ${1.4 * 7}em;
+          }
         }
       `}</style>
     </React.Fragment>
