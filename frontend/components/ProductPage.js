@@ -156,7 +156,7 @@ const ProductPage = ({ slug }) => {
           position: fixed;
           padding: 20px 0;
           z-index: 1000;
-          width: 500px;
+          max-width: 80vw;
           margin: 5% auto;
           left: 0;
           right: 0;
@@ -204,6 +204,7 @@ const ProductPage = ({ slug }) => {
           display: flex;
           flex-direction: column;
           justify-content: center;
+          padding: 15px;
         }
 
         .title {

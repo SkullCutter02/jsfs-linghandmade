@@ -13,12 +13,12 @@ export const whyChooseHandmadeSoap =
   "          Dimethicone which creates silky after-use feeling. As you know, skin\n" +
   "          is the largest organ and numerous researches show that toxic chemicals\n" +
   "          can pass through the porous skin and go into our bloodstream. Using\n" +
-  "          over-time, those toxic can be accumulated internally in our body and\n" +
+  "          over-time, those toxic chemicals can be accumulated internally in our body and\n" +
   "          poses long term threat to our health. <br /> <br />\n" +
   "          Then you will ask,”If bottled liquid cleanser is harmful, why not\n" +
-  "          using commercially made soaps?” There are in fact distinct" +
-  "          differences between the two. <br /> <br />\n" +
-  "          Commercial soaps are made with hot process so that soaps can be\n" +
+  "          use commercially made soaps?” There are in fact distinct" +
+  "          differences between the commercially made soaps and handmade soaps. <br /> <br />\n" +
+  "          Commercially made soaps are made with hot process so that soaps can be\n" +
   "          produced and used in a short period of time. Besides, glycerin ( a\n" +
   "          humectant that attracts moisture from the air to the skin ) which is\n" +
   "          produced naturally from the soap making process, is being extracted\n" +
@@ -32,7 +32,7 @@ export const whyChooseHandmadeSoap =
   "          On the other hand, handmade soaps are made by using different\n" +
   "          vegetable oils with cold process. It is due to this cold process that\n" +
   "          the nutrients and vitamins of the vegetable oils can be preserved.\n" +
-  "          Moreover, most handmade soaps are scented with essential oils derived\n" +
+  "          Moreover, good quality handmade soaps are scented with essential oils derived\n" +
   "          from plants and flowers which contain different skin-loving\n" +
   "          properties. Other natural ingredients can also be added such as clays,\n" +
   "          herbs, milk, eggs etc to produce different functions. <br /> <br />\n" +
@@ -49,12 +49,12 @@ export const whyChooseHandmadeSoap =
   "          into water and carbon dioxide after 24 hours. As such, they pose zero\n" +
   "          burden and threat to our planet. <br /> <br />\n" +
   "          Handmade soaps can be tailor-made to suit different needs of different\n" +
-  "          people. It can done simply by varying the combination of vegetable\n" +
+  "          people. It can be done simply by varying the combination of vegetable\n" +
   "          oils and the addition of other natural ingredients. <br /> <br />\n" +
   "          The main reason why people refused to use soaps is because of the dry\n" +
   "          feeling they have after using commercial soaps. If this is exactly the\n" +
   "          reason why you turn away from soaps, I would strongly recommend you\n" +
-  "          to pick up a piece of handmade soap and I can guarantee you will love\n" +
+  "          to use handmade soap and I can guarantee you will love\n" +
   "          it. While the beneficial effects might not be seen instantly, if used\n" +
   "          over time, the beneficial effect will be obvious and long lasting.\n" +
   "          <br /> <br />";
@@ -69,7 +69,7 @@ export const whyChooseLHM =
   "          Color are derived from natural herbs and clays with the exception of some\n" +
   "          festive products which calls for certain fragrance and colour. Take\n" +
   "          for an instance, Christmas themed soaps which are usually in typical\n" +
-  "          bright red and green colour cannot be achieved without colouring\n" +
+  "          bright red and green colour that cannot be achieved without using colouring\n" +
   "          pigments. <br /> <br />\n" +
   "          In all cases, we guarantee a high standard of quality, a strict\n" +
   "          standard of hygiene and a simple but nice packaging that is pleasant\n" +

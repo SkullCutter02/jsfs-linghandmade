@@ -28,6 +28,7 @@ const Information = ({ info }) => {
         @media screen and (max-width: 500px) {
           .text {
             font-size: 18px;
+            width: 90%;
           }
         }
       `}</style>

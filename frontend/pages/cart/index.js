@@ -19,6 +19,8 @@ const CartPage = () => {
           accumulator += item.price;
         });
         setTotalCost(accumulator);
+      } else {
+        setTotalCost(0);
       }
     }
   }, [cartContext.cartItems]);
@@ -74,7 +76,11 @@ const CartPage = () => {
             <img className="spinner" src={spinner} alt="spinner" />
           )}
           <div className="cart-info">
-            <p>Total: ${totalCost}</p>
+            <p>
+              {cartContext?.cartItems.length === 0
+                ? null
+                : `Total: ${totalCost}`}
+            </p>
           </div>
         </div>
       </Layout>

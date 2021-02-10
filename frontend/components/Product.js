@@ -129,6 +129,10 @@ const Product = ({
           button {
             font-size: 0.8rem;
           }
+
+          a {
+            margin: 0 20px;
+          }
         }
       `}</style>
     </React.Fragment>
